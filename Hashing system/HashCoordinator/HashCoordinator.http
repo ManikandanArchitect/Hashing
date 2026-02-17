@@ -1,0 +1,6 @@
+@HashCoordinator_HostAddress = http://localhost:5234
+
+GET {{HashCoordinator_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

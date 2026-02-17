@@ -1,0 +1,28 @@
+services:
+  node-a:
+    build: ./HashNode
+    container_name: node-a
+    ports:
+      - "5001:8080"
+
+  node-b:
+    build: ./HashNode
+    container_name: node-b
+    ports:
+      - "5002:8080"
+
+  node-c:
+    build: ./HashNode
+    container_name: node-c
+    ports:
+      - "5003:8080"
+
+  coordinator:
+    build: ./HashCoordinator
+    container_name: coordinator
+    ports:
+      - "6000:8080"
+    depends_on:
+      - node-a
+      - node-b
+      - node-c
